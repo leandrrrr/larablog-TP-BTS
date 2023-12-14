@@ -12,10 +12,15 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('articles.create')" :active="request()->routeIs('articles.create')">
+                        Créer un article
+                    </x-nav-link>
+
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
             </div>
 
             <!-- Settings Dropdown -->
@@ -32,6 +37,9 @@
                             </div>
                         </button>
                     </x-slot>
+
+
+
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
