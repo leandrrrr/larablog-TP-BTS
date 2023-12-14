@@ -18,8 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
+    Route::get('/articles/create', [UserController::class, 'create'])->name('articles.create');
+    Route::post('/articles/store', [UserController::class, 'store'])->name('articles.store');
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
