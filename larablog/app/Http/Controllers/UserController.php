@@ -36,7 +36,8 @@ class UserController extends Controller
         // $article->categories()->sync($request->input('categories'));
 
         // On redirige l'utilisateur vers la liste des articles
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('create', 'Article créé !');
+
     }
     public function index()
     {
@@ -74,7 +75,7 @@ class UserController extends Controller
         $article->delete();
 
         // On redirige l'utilisateur vers la liste des articles (avec un flash)
-        return redirect()->route('dashboard')->with('success', 'Article mis à jour !');
+        return redirect()->route('dashboard')->with('remove', 'Article FINITO !');
 
     }
 
@@ -95,7 +96,7 @@ class UserController extends Controller
         $article->update($data);
 
         // On redirige l'utilisateur vers la liste des articles (avec un flash)
-        return redirect()->route('dashboard')->with('remove', 'Article FINITO !');
+        return redirect()->route('dashboard')->with('success', 'Article mis à jour !');
     }
 
 
