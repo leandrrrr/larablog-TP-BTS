@@ -10,7 +10,16 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
+
                 </div>
+                @foreach ($articles as $article)
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4">
+                        <div class="p-6 text-gray-900">
+                            <h2 class="text-2xl font-bold">{{ $article->title }}</h2>
+                            <p class="text-gray-700">{{ substr($article->content, 0, 30) }}...</p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

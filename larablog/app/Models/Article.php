@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Article
- * 
+ *
  * @property int $id
  * @property int|null $user_id
  * @property string $title
@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property bool|null $draft
  * @property Carbon $created_at
  * @property Carbon $updated_at
- * 
+ *
  * @property User|null $user
  * @property Collection|Category[] $categories
  * @property Collection|Tag[] $tags
@@ -30,6 +30,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Article extends Model
 {
+
+
+    /**
+     * @var
+     */
+
 	protected $table = 'articles';
 
 	protected $casts = [
